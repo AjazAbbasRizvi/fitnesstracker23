@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <div fxHide.gt-xs>
+      <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div><a fxFlex fxHide.xs><img src="../../../assets/images/ngfitness-logo.png" style="height: 65px;
+      width: 78px;
+      position: relative;
+      top: 5px;
+      left: -16px;" alt="FitnessTracker23"></a></div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="10px" class="navigation-item">
+        <li *ngIf="(isAuth$ | async)" (click)="logout()" style="cursor: pointer;"><img class="logoutlogo" src="../../../assets/images/icons8-logout-64.png" alt="logout"><a></a></li>
+      </ul>
+    </div>
+  </mat-toolbar>

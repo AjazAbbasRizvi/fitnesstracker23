@@ -1,0 +1,22 @@
+a
+{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover , a:active 
+{
+    color: lightgrey;
+}
+.navigation-item{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.logoutlogo{
+    position: relative;
+    top: 4px;
+    right: -17px;
+    height: 44px;
+    width: 61px;
+}

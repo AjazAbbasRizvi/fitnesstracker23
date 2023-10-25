@@ -1,0 +1,71 @@
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    #f="ngForm"
+    (ngSubmit)="onSubmit(f)"
+  >
+    <mat-form-field>
+      <mat-label>E-Mail</mat-label>
+      <input
+        type="email"
+        ngModel
+        name="email"
+        #emailInput="ngModel"
+        email
+        required
+        matInput
+        placeholder="Enter Your E-mail"
+      />
+    </mat-form-field>
+    <mat-error *ngIf="emailInput.value?.length == 0 && emailInput.touched"
+      >Field must not be empty</mat-error
+    >
+    <mat-error *ngIf="!emailInput.valid && emailInput.dirty"
+      >Email is Invalid</mat-error
+    >
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        ngModel
+        name="password"
+        matInput
+        placeholder="Enter Your Password"
+        #passwordInput="ngModel"
+        required
+        minlength="6"
+        maxlength="6"
+      />
+      <mat-error
+        *ngIf="passwordInput.value?.length < 6 && passwordInput.touched"
+        >Must be 6 characters long</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      *ngIf="!(isLoading$ | async)"
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="!f.valid"
+    >
+      Submit
+    </button>
+    <p
+      *ngIf="!(isLoading$ | async)"
+      style="
+        font-weight: bolder;
+        font-size: larger;
+        color: rgb(240, 12, 210);
+        text-decoration: none;
+      "
+    >
+      Does not have an account ?
+      <a href="/signup" style="color: orange">Create an account</a>
+    </p>
+    <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
+  </form>
+</section>
