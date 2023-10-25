@@ -1,6 +1,6 @@
 # Fitnesstracker23
 
-Applocation Link - https://ng-fitness-tracker-f70fb.web.app
+Application Link - https://ng-fitness-tracker-f70fb.web.app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
